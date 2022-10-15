@@ -27,16 +27,3 @@ There are different common scenarios of hanging out with friends. It can be a pl
 <li><strong>The web app is conveniently connected to Map applications (Google Maps, etc).</strong></li>
 </ol>
 
-## Members
-
-[Xi Liu](https://github.com/xi-liu-cs)</br>
-[Yiyi (Yvonne) Wu](https://github.com/Yvonne511)</br>
-[Yuewen Yang](https://github.com/kapa-moon)</br>
-
-## History
-
-Sprint 0: [Wireframes & Prototype](https://github.com/agiledev-students-fall2022/final-project-team-decider/tree/master/ux-design)</br>
-
-## Contribute
-
-See the [contribution guide](CONTRIBUTING.md) for more information.
