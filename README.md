@@ -1,6 +1,8 @@
 # Decider
 
 ### 🥘 Find the perfect place for friends hangouts. <mark>Right Now!</mark>
+<br> Production: October 2022 - December 2022<br>
+[Figma Prototype v1.0](https://www.figma.com/proto/piQariWLPgfwd1U27sgZxU/Team-Decider-Prototype-With-Visuals?node-id=219%3A313&scaling=scale-down&page-id=0%3A1&starting-point-node-id=219%3A313&show-proto-sidebar=1)<br>
 
 ## Introduction
 
