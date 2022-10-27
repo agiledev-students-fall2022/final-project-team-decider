@@ -5,8 +5,6 @@ function wrap_multiply(Module)
 {
   return function(a, b)
   {
-    console.log('a', a.flat());
-    console.log('a.leng', a.length);
     let n = a.length,
     a_flat = new Float32Array(a.flat()),
     b_flat = new Float32Array(b.flat()),
@@ -57,16 +55,15 @@ function Mat(props)
   if(!add || !matrix_multiply)
     return 'loading webassembly';
 
-  /* let result = matrix_multiply([[0, 1], [2, 3]], [[4, 5], [6, 7]]); */
-  console.log(props.a);
-  console.log(a);
-  let result = matrix_multiply(props.a);
-  // let result = matrix_multiply([[0, 1], [2, 3]], [[4, 5], [6, 7]]);
+  let result = matrix_multiply(props.a[0], props.a[1]);
 
+  console.log('a', props.a[0]);
+  console.log('b', props.a[1]);
+  console.log(JSON.stringify(result));
   return (
     <div>
-      {/* <div>1 + 2 = {add(1, 2)}</div> */}
-      <div>[[0, 1], [2, 3]] * [[4, 5], [6, 7]] = {JSON.stringify(result)}</div>
+      {/* <div>1 + 2 = {add(1, 2)}</div>
+      <div>[[0, 1], [2, 3]] * [[4, 5], [6, 7]] = {JSON.stringify(result)}</div> */}
     </div>
   );
 }
