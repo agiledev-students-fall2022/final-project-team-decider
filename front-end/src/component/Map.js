@@ -16,6 +16,8 @@ function Map()
     Location Type
     Location Description`;
 
+    const APIKey = '5b82ca360a754cec8eb085096ff20a32';
+
     return(
         <>
             <div className = 'd0'>
