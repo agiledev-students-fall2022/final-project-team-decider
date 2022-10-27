@@ -10,6 +10,7 @@ import Map from './component/Map';
 import Login from './component/Login';
 import Signup from './component/Signup';
 import Go from './component/Go';
+import Demo from './component/Demo';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/go' element={<Go />} />
+            <Route path='/demo' element={<Demo />} />
           </Routes>
         </div>
       </div>
