@@ -15,7 +15,7 @@ import Demo from './component/Demo';
 function App() {
   return (
     <div className='App p-6 max-h-screen flex justify-center min-w-screen max-w-screen md: max-w-800'>
-      <div>
+      <div className='min-w-full max-w-full'>
         <div className='routes h-2/3'>
           <Routes>
             <Route path='/' element={<CreateNewTeam />} />
