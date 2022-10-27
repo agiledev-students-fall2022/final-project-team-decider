@@ -9,19 +9,68 @@ import Button from './Button';
 import { useState, useEffect } from "react";
 
 function Go({ SelctedLocation, SavedLocations }) {
-    // let chosenLocation = randomSelect(SavedLocations);
-    console.log(len);
+
+    const [randomCard, setRandomCard] = useState({});
+    const [selectIsClicked, setSelectIsClicked] = useState(false);
+
+    function randomSelect(savedLocations) {
+
+        let randomIndex = Math.floor(Math.random() * savedLocations.length);
+        let chosenLocation = savedLocations[randomIndex];
+        return chosenLocation;
+
+    }
+
+    function handleClick() {
+        console.log("clicked");
+        setRandomCard(randomSelect(savedLocations));
+        setSelectIsClicked(true);
+    }
+
+    const GoBtn = () => {
+        return (
+            <div className='p-4 justify-center'>
+                <button onClick={handleClick} className='bg-bubble-pink border-bright text-primary rounded-lg
+                p-2 text-sm w-44 h-14'>Select!</button>
+            </div>
+        );
+    }
+
+    const Result = () => {
+        if (selectIsClicked) {
+            return (
+                <GroupCard name={randomCard.name} type={randomCard.type} image={Placeholder} distance={randomCard.distance} category={randomCard.category}></GroupCard>
+            );
+        } else {
+            return (
+                <div className='p-16 justify-center'>
+                </div>
+            );
+        }
+    }
+    // fetch from database: the location with most votes
+    const selectedLocation = {
+        name: "il laboratorio del gelato",
+        distance: 2,
+        type: "catering",
+        category: "snack",
+        housenumber: "188",
+        street: "Ludlow Street",
+    }
+
+    // let chosenLocation = randomSelect(savedLocations);
+
     return (
         <>
             <Selector></Selector>
-            {/* <div className='gopage'> */}
+            {/* <div className='gopage overflow-scroll'> */}
             <GoBtn></GoBtn>
             <div className='bg-blue-200 flex-col justify-center space-y-3 max-w-sm h-full overflow-scroll overscroll-contain'>
-                <GroupCard name={SelectedLocation[0].name} type={SelectedLocation[0].type} image={Placeholder} distance={SelectedLocation[0].distance}></GroupCard>
+                {/* <GroupCard name={chosenLocation.name} type={chosenLocation.type} image={Placeholder} distance={chosenLocation.distance} category={chosenLocation.category}></GroupCard> */}
+                <Result></Result>
 
                 <p>👇 These locations are most popular among friends:</p>
-                {/* <Vote></Vote> */}
-                <GroupCard name={SelectedLocation[0].name} type={SelectedLocation[0].type} image={Placeholder} distance={SelectedLocation[0].distance}></GroupCard>
+                <GroupCard name={selectedLocation.name} type={selectedLocation.type} image={Placeholder} distance={selectedLocation.distance} category={selectedLocation.category}></GroupCard>
 
             </div>
             <Button str_array={['Group Information']} type={6}></Button>
@@ -31,36 +80,13 @@ function Go({ SelctedLocation, SavedLocations }) {
     );
 }
 
+
+
 // Hard Coded Data Example
 
-const SelectedLocation = [{
-    name: "il laboratorio del gelato",
-    distance: 2,
-    type: "catering",
-    category: "snack",
-    housenumber: "188",
-    street: "Ludlow Street",
-}]
 
-const GoBtn = () => {
-    return (
-        <div className='p-4 justify-center'>
-            <button className='bg-bubble-pink border-bright text-primary rounded-lg
-            p-2 text-sm w-44 h-14'>Select!</button>
-        </div>
-    );
-}
 export default Go;
 
-
-
-function randomSelect(savedLocations) {
-
-    let randomIndex = Math.floor(Math.random() * savedLocations.length);
-    let chosenLocation = savedLocations[randomIndex];
-    return chosenLocation;
-
-}
 
 // should be fetched from database
 
