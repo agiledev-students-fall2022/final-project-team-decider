@@ -1,4 +1,4 @@
-textarea.textarea0
+div.demo_div0
 {
     width: 345px;
     height: 305px;
@@ -13,7 +13,9 @@ textarea.textarea0
     margin-bottom: -20px;
 }
 
-button.button0
+button.demo_button0
 {
-    background-color: #fff;
+    background-color: #e6d0bd;
+    width: 345px;
+    height: 305px;
 }
