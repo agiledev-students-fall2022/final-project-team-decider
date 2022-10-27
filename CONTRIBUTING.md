@@ -44,4 +44,5 @@
 * Run npm install for dependencies in package.json file
 
 ## Instructions for building and testing the project
-* Run npm start to launch the React.js server
+* Run npm start
+* Run make to compile into wasm
