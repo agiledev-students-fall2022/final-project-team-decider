@@ -60,7 +60,7 @@ function Mat(props)
   console.log('a', props.a[0]);
   console.log('b', props.a[1]);
   console.log(JSON.stringify(result));
-  return (
+  return(
     <div>
       {/* <div>1 + 2 = {add(1, 2)}</div>
       <div>[[0, 1], [2, 3]] * [[4, 5], [6, 7]] = {JSON.stringify(result)}</div> */}
