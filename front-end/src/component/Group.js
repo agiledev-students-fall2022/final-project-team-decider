@@ -8,20 +8,21 @@ import React, { useState, useEffect } from 'react';
 
 function Group({ SelctedLocation }) {
 
-    function fetchFromDB() {
-        axios.get('http://localhost:4000/locations')
-            .then(res => {
-                console.log(res.data);
-                setSelectedLocations(res.data);
-            }
-            )
+    function fetchFromDB(){
+        // axios.get('http://localhost:4000/locations')
+        // .then(res => {console.log(res.data);
+        //     setSelectedLocations(res.data);}
+        // )
+        var group_id = "test1";
+        axios.get(`http://localhost:4000/locations/group_id/${group_id}`)
+        .then(res => {setSelectedLocations(res.data);}
+        )
     }
 
     const [selectedLocations, setSelectedLocations] = useState([]);
     useEffect(() => {
         fetchFromDB();
     }, []);
-
 
     return (
         <>
@@ -37,7 +38,7 @@ function Group({ SelctedLocation }) {
 var countGroupCard = 0;
 
 const getGroupCard = savedLocations => savedLocations.map(item => (
-    <GroupCard name={item.name} type={item.type} distance={item.distance} category={item.category} housenumber={item.housenumber} street={item.street} image={Placeholder} key={countGroupCard++}></GroupCard>
+    <GroupCard name={item.name} type={item.type} distance={item.distance} category={item.category} housenumber={item.housenumber} street={item.street} image={Placeholder} vote = {item.vote} key={countGroupCard++}></GroupCard>
 ));
 
 

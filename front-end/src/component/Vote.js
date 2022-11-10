@@ -6,7 +6,7 @@ import './Vote.css';
 import { useState } from "react";
 import axios from 'axios';
 
-function Vote() {
+function Vote(props) {
 
     function fetchFromDB() {
         axios.get('http://localhost:4000/locations')
@@ -27,7 +27,7 @@ function Vote() {
     }, []);
 
     // voteCount neet to integrate with backend
-    const [voteCount, setVoteCount] = useState(1);
+    const [voteCount, setVoteCount] = useState(props.vote);
     const handleClick = () => {
         setVoted(!voted);
         if (voted) {
