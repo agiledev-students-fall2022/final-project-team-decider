@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const locationSchema = new Schema({
+const savedLocationSchema = new Schema({
     group_id: { type: String, required: true },
     name: { type: String, required: true },
     location_address: { type: String, required: true },
@@ -15,6 +15,6 @@ const locationSchema = new Schema({
     vote: { type: Number, required: false },
 });
 
-const Location = mongoose.model("Location", locationSchema);
+const SavedLocation = mongoose.model("SavedLocation", savedLocationSchema);
 
 module.exports = Location;

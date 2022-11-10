@@ -1,15 +1,13 @@
 const router = require('express').Router();
 let Location = require('../model/location.model');
 
-router.route('/').get((req, res) =>
-{
+router.route('/').get((req, res) => {
     Location.find()
         .then(locations => res.json(locations))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/add').post((req, res) =>
-{
+router.route('/add').post((req, res) => {
     const group_id = req.body.group_id;
     const name = req.body.name;
     const location_address = req.body.location_address;
@@ -39,22 +37,31 @@ router.route('/add').post((req, res) =>
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/:id').get((req, res) =>
-{
+router.route('/:id').get((req, res) => {
     Location.findById(req.params.id)
         .then(location => res.json(location))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/:id').delete((req, res) =>
-{
+router.route('/:id').delete((req, res) => {
     Location.findByIdAndDelete(req.params.id)
         .then(() => res.json('Location deleted.'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:id').post((req, res) =>
-{
+router.route('/vote/:id').post((req, res) => {
+    Location.findById(req.params.id)
+        .then(location => {
+            location.vote = Number(req.body.vote) + 1;
+            location.save()
+                .then(() => res.json('Location voted!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+
+});
+
+router.route('/update/:id').post((req, res, vote) => {
     Location.findById(req.params.id)
         .then(location => {
             location.group_id = req.body.group_id;
