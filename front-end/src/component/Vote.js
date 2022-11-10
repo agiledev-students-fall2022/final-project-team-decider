@@ -1,13 +1,11 @@
 
 import React, { useEffect } from 'react';
-import { Component } from 'react';
 import './Button.css';
 import './Vote.css';
 import { useState } from "react";
 import axios from 'axios';
 
-function Vote() {
-
+function Vote(props) {
     function fetchFromDB() {
         axios.get('http://localhost:4000/locations')
             .then(res => {
@@ -16,6 +14,8 @@ function Vote() {
             }
             )
     }
+
+
 
     const [voted, setVoted] = useState(false);
     const [data, setData] = useState([]);
@@ -28,6 +28,7 @@ function Vote() {
 
     // voteCount neet to integrate with backend
     const [voteCount, setVoteCount] = useState(1);
+
     const handleClick = () => {
         setVoted(!voted);
         if (voted) {
@@ -37,10 +38,19 @@ function Vote() {
         }
     };
 
-    useEffect(() => {
-        fetchFromDB();
-    }, []);
+    function postVote() {
+        axios.post(`http://localhost:4000/vote/${props.id}`, {
+            vote: voteCount
+        })
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            })
+    }
 
+    useEffect(() => {
+        postVote();
+    }, [voteCount]);
 
     return (
         <button onClick={handleClick} className={voted ? 'bg-sharp-pink text-white voteBox' : 'bg-cream-yellow text-primary voteBox'}>

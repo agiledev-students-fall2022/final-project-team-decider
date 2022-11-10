@@ -50,15 +50,16 @@ router.route('/:id').delete((req, res) => {
 });
 
 router.route('/vote/:id').post((req, res) => {
+    // console.log("check");
     Location.findById(req.params.id)
         .then(location => {
-            location.vote = Number(req.body.vote) + 1;
+            location.vote = (req.body.voteCount);
             location.save()
                 .then(() => res.json('Location voted!'))
                 .catch(err => res.status(400).json('Error: ' + err));
+
         })
         .catch(err => res.status(400).json('Error: ' + err));
-
 });
 
 router.route('/update/:id').post((req, res, vote) => {
