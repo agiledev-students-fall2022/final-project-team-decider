@@ -75,7 +75,7 @@ router.route('/vote').post((req, res) => {
 });
 
 router.route('/addgroup').post((req, res) => {
-    // let filter = { user_id: req.body.user_id, "my_groups.idx": {$ne: req.body.group_idx} };
+    /* let filter = { user_id: req.body.user_id, "my_groups.idx": {$ne: req.body.group_idx} }; */
     let filter = { user_id: req.body.user_id };
     let update = { $addToSet: { my_groups: req.body.group_idx }};
     let option = {upsert: true};
