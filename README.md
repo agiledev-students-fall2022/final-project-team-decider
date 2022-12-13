@@ -160,4 +160,4 @@ See the [contribution guide](CONTRIBUTING.md) for more information.
 # Video
 
 [https://www.youtube.com/watch?v=or1z1fOPeH4](https://www.youtube.com/watch?v=or1z1fOPeH4)<br>
-This is a video showing the deployments to Digital Ocean at ```http://164.90.254.52:3000/``` and ```http://164.90.254.52:4000/``` are working properly. This video only shows a very small fraction of the functionalities available. Please see ```Usage``` section in this file about how to use this application.
+This is a video showing the deployments to Digital Ocean at ```http://164.90.254.52:3000/``` and ```http://164.90.254.52:4000/``` are working properly. This video only shows a very small fraction of the functionalities available. Please see the ```Usage``` section in this file about how to use this application.
