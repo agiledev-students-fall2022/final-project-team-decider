@@ -159,5 +159,5 @@ See the [contribution guide](CONTRIBUTING.md) for more information.
 
 # Video
 
-[https://www.youtube.com/watch?v=or1z1fOPeH4](https://www.youtube.com/watch?v=or1z1fOPeH4)
-This is a video showing the deployment to Digital Ocean is working properly, this video only shows a small fraction of the functionalities available, please see Usage section in this file about how to use this application.
+[https://www.youtube.com/watch?v=or1z1fOPeH4](https://www.youtube.com/watch?v=or1z1fOPeH4)<br>
+This is a video showing the deployments to Digital Ocean at ```http://164.90.254.52:3000/``` and ```http://164.90.254.52:4000/``` are working properly, this video only shows a very small fraction of the functionalities available, please see ```Usage``` section in this file about how to use this application.
