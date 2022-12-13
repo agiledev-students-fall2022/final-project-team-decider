@@ -156,3 +156,8 @@ Sprint 0: [Wireframes & Prototype](https://github.com/agiledev-students-fall2022
 # Contribute
 
 See the [contribution guide](CONTRIBUTING.md) for more information.
+
+# Video
+
+[https://www.youtube.com/watch?v=or1z1fOPeH4](https://www.youtube.com/watch?v=or1z1fOPeH4)
+This is a video showing the deployment to Digital Ocean is working properly, this video only shows a small fraction of the functionalities available, please see Usage section in this file about how to use this application.
