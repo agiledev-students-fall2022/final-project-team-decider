@@ -6,11 +6,11 @@
 
 # Decider
 
-### 🥘 Find the perfect place for friends hangouts. <mark>Right Now!</mark>
+### 🥘 Find the perfect place for friends hangouts. [<mark>Right Now!</mark>](http://164.90.254.52:3000/)
 
 ## Introduction
 
-### <li> <strong>Scenario</strong></li>
+### <li> <strong>Scenarios</strong></li>
 
 There are different common scenarios of hanging out with friends. It can be a planned dinner, or a casual meet during the day of work/study.<br> Following is a conversation that you may imagine yourself had with a friend/peer/coworker: <br>
 

@@ -5,6 +5,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 100
     steps:
       - name: Deploy React and Express App
         uses: appleboy/ssh-action@master
@@ -15,8 +16,9 @@ jobs:
           script: |
             cd final-project-team-decider
             docker compose down
+            docker rmi $(docker images -a -q)
             git pull
             git fetch
-            docker compose up --build -d
+            docker compose up -d
             echo 'Success'
       
