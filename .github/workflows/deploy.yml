@@ -1,0 +1,24 @@
+name: Build & Deploy
+on:
+  push: 
+   branches: [master]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+      - name: Deploy React and Express App
+        uses: appleboy/ssh-action@master
+        with: 
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{ secrets.SSH_USERNAME }}
+          script: |
+            cd final-project-team-decider
+            docker compose down
+            docker rmi $(docker images -a -q)
+            git pull
+            git fetch
+            docker compose up -d
+            echo 'Success'
+      
